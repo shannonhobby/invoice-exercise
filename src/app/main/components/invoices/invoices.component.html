@@ -1,0 +1,16 @@
+<div *ngIf="invoicesLength === 0; else elseBlock" class="no-invoices">
+  <img src="/assets/assets/illustration-empty.svg" />
+  <h1>There is nothing here</h1>
+  <p>
+    Create an invoice by clicking the <b>New Invoice</b> button and get started
+  </p>
+</div>
+<ng-template #elseBlock class="invoices">
+  <div class="invoices">
+    <app-main-invoice
+      *ngFor="let invoice of invoices$ | async"
+      [invoice]="invoice"
+      class="invoice-wrapper"
+    ></app-main-invoice>
+  </div>
+</ng-template>

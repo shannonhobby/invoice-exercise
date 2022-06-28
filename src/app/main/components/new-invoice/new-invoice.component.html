@@ -1,0 +1,93 @@
+<div class="new-invoice">
+  <h1>New Invoice</h1>
+
+  <div class="bill-from">
+    <h2>Bill From</h2>
+    <div class="long-input-field">
+      <p>Street Address</p>
+      <input [value]="senderStreet" />
+    </div>
+    <div class="one-third-input">
+      <div class="small-input-field">
+        <p>City</p>
+        <input />
+      </div>
+      <div class="small-input-field">
+        <p>Post Code</p>
+        <input />
+      </div>
+      <div class="small-input-field">
+        <p>Country</p>
+        <input />
+      </div>
+    </div>
+  </div>
+  <div class="bill-to">
+    <h2>Bill To</h2>
+    <div class="long-input-field">
+      <p>Client's Name</p>
+      <input />
+    </div>
+    <div class="long-input-field">
+      <p>Client's Email</p>
+      <input />
+    </div>
+    <div class="long-input-field">
+      <p>Street Address</p>
+      <input placeholder="e.g. email@example.com" />
+    </div>
+    <div class="one-third-input">
+      <div class="small-input-field">
+        <p>City</p>
+        <input />
+      </div>
+      <div class="small-input-field">
+        <p>Post Code</p>
+        <input />
+      </div>
+      <div class="small-input-field">
+        <p>Country</p>
+        <input />
+      </div>
+    </div>
+  </div>
+  <div class="one-half-input">
+    <div class="medium-input-field">
+      <p>Invoice Date</p>
+      <input type="date" class="datepicker-input" />
+    </div>
+    <div class="medium-input-field">
+      <p>Payment Terms</p>
+      <input list="payment-terms" name="payment" id="payment" />
+      <datalist id="payment-terms">
+        <option value="Net 1 Day"></option>
+        <option value="Net 7 Days"></option>
+        <option value="Net 14 Days"></option>
+        <option value="Net 30 Days"></option>
+      </datalist>
+    </div>
+  </div>
+  <div class="long-input-field">
+    <p>Project Description</p>
+    <input />
+  </div>
+
+  <div class="items">
+    <h1>Item List</h1>
+    <app-main-item
+      *ngFor="let item of items$ | async"
+      [item]="item"
+      class="item-wrapper"
+    ></app-main-item>
+    <div class="add-item-wrapper">
+      <button (click)="addItem()" class="add-item">+ Add New Item</button>
+    </div>
+  </div>
+  <div class="close-buttons">
+    <button class="discard">Discard</button>
+    <div class="save">
+      <button class="save-as-draft">Save as Draft</button>
+      <button (click)="addInvoice()" class="save-and-send">Save & Send</button>
+    </div>
+  </div>
+</div>

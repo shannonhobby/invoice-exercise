@@ -1,0 +1,18 @@
+<div class="main">
+  <app-main-sidebar class="sidebar"></app-main-sidebar>
+  <app-main-new-invoice
+    *ngIf="newInvoice$ | async"
+    class="new-invoice-wrapper"
+  ></app-main-new-invoice>
+  <div
+    (click)="closeNewInvoice()"
+    *ngIf="newInvoice$ | async"
+    class="overlay"
+  ></div>
+  <div class="main-content">
+    <div class="header-wrapper">
+      <app-main-header class="header"></app-main-header>
+    </div>
+    <app-main-invoices class="invoices-wrapper"></app-main-invoices>
+  </div>
+</div>

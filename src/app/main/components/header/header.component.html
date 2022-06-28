@@ -1,0 +1,14 @@
+<div class="title">
+  <h1>Invoices</h1>
+  <p *ngIf="invoicesLength === 0">No Invoices</p>
+  <p *ngIf="invoicesLength > 0">
+    There are {{ invoicesLength }} total invoices
+  </p>
+  <p *ngIf="invoicesLength === 1">There is 1 total invoice</p>
+</div>
+
+<div>
+  <button (click)="addInvoice()">
+    <img src="/assets/assets/icon-plus.svg" />New Invoice
+  </button>
+</div>

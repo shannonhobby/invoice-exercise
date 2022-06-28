@@ -1,1 +1,500 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan&display=swap");
+
+:root {
+  /* Colors */
+  --dark-blue: #7c5dfa;
+  --light-blue: #9277ff;
+  --darker-grey: #1e2139;
+  --dark-grey: #252945;
+  --light-grey: #dfe3fa;
+  --grey: #888eb0;
+  --blue-grey: #7e88c3;
+  --black: #0c0e16;
+  --dark-salmon: #ec5757;
+  --salmon: rgb(255, 151, 151);
+  --light-background: #f8f8fb;
+  --blue-black: #141625;
+}
+
+body {
+  background: #f8f8fb;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "League Spartan", sans-serif;
+}
+
+.main {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.main-content {
+  width: 100%;
+  height: 1000px;
+}
+/* Header on main invoice page*/
+
+.header {
+  display: flex;
+  flex-direction: row;
+  height: 60px;
+  width: 730px;
+  margin-top: 80px;
+  line-height: 10px;
+}
+
+.header-wrapper {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: center;
+}
+.header .title {
+  display: block;
+  margin-right: 400px;
+  width: 800px;
+}
+.header .title p {
+  color: var(--grey);
+}
+.header .title p {
+  margin-top: 0px;
+  padding-top: 0px;
+}
+.header div {
+  height: 60px;
+  width: auto;
+  display: flex;
+  align-items: center;
+}
+
+.header div button {
+  background-color: #7c5dfa;
+  border: none;
+  padding: 10px;
+  border-radius: 30px;
+  width: 150px;
+  color: #f8f8fb;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 25px;
+  font-weight: bold;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.header div button img {
+  background-color: #f8f8fb;
+  padding: 10px;
+  margin-left: 0px;
+  margin-right: auto;
+  border-radius: 50px;
+}
+
+/* SIDEBAR */
+.sidebar {
+  display: flex;
+  left: 0px;
+  bottom: 0px;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--dark-grey);
+  height: 100%;
+  border-radius: 0px 30px 30px 0px;
+  width: 103px;
+  position: fixed;
+  z-index: 4;
+}
+
+.sidebar img {
+  width: 40px;
+  height: auto;
+  border-radius: 30px;
+}
+
+.logo {
+  position: absolute;
+  z-index: 1;
+}
+.front-logo {
+  background-color: var(--light-blue);
+  width: 100px;
+  height: 50px;
+  position: absolute;
+  margin-top: -50px;
+  border-radius: 30px 0px 30px;
+}
+.back-logo {
+  background-color: var(--dark-blue);
+  width: 100px;
+  height: 100px;
+  border-radius: 0px 30px 30px 0px;
+  position: static;
+  z-index: 1;
+}
+.logo-image {
+  position: static;
+  z-index: 2;
+  margin-top: 30px;
+}
+.profile-image {
+  margin-bottom: 25px;
+  margin-top: auto;
+}
+
+/* INVOICES ON MAIN PAGE */
+
+.invoices-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+}
+.invoices-wrapper .no-invoices {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  margin-top: 10%;
+}
+
+.invoices-wrapper .invoices {
+  display: flex;
+  flex-direction: column;
+  margin-top: 70px;
+}
+
+/* INDIVIDUAL INVOICE IN LIST */
+
+.invoice-wrapper {
+  width: 720px;
+  height: 72px;
+  display: flex;
+  justify-content: center;
+  margin: 15px;
+}
+
+.invoice-wrapper .invoice {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  height: 72px;
+  background-color: white;
+  padding: 5px;
+  filter: drop-shadow(0px 4px 10px rgb(72, 84, 159, 10%));
+  border-radius: 6px;
+}
+
+.invoice .id {
+  display: flex;
+  margin-left: 30px;
+  flex-direction: row;
+}
+.id .id-tag {
+  color: var(--grey);
+  font-size: 20px;
+  font-family: inherit;
+}
+
+.id .id-string {
+  color: black;
+  font-family: inherit;
+  font-size: 20px;
+  font-weight: bold;
+  margin-left: 0;
+}
+
+.invoice .payment-info {
+  max-width: 120px;
+  min-width: 120px;
+  margin-left: 40px;
+  color: var(--grey);
+  font-size: 19px;
+  text-align: left;
+}
+
+.invoice .total {
+  font-weight: bold;
+  font-size: 20px;
+  margin-left: auto;
+  margin-right: 15px;
+  text-align: right;
+}
+
+.invoice .paid .dot-paid {
+  width: 8px;
+  height: auto;
+  filter: invert(100%) sepia(47%) saturate(3336%) hue-rotate(79deg)
+    brightness(95%) contrast(76%);
+  margin: 10px;
+  margin-left: 0px;
+}
+
+.invoice .paid {
+  background-color: rgb(51, 214, 159, 5%);
+  width: 113px;
+  border-radius: 10px;
+  text-align: center;
+  color: rgb(51, 214, 159, 50%);
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+  justify-content: center;
+}
+
+.invoice .pending .dot-pending {
+  width: 8px;
+  height: auto;
+  filter: invert(78%) sepia(50%) saturate(6398%) hue-rotate(359deg)
+    brightness(101%) contrast(106%);
+  margin: 10px;
+  margin-left: 0px;
+}
+
+.invoice .pending {
+  background-color: rgb(255, 143, 0, 5%);
+  width: 113px;
+  border-radius: 10px;
+  text-align: center;
+  color: rgb(255, 143, 0);
+  font-weight: bold;
+  display: flex;
+  margin-right: 10px;
+  align-items: center;
+
+  justify-content: center;
+}
+
+.invoice .draft .dot-draft {
+  width: 8px;
+  height: auto;
+
+  margin: 10px;
+  margin-left: 0px;
+}
+
+.invoice .draft {
+  background-color: rgb(0, 0, 0, 5%);
+  width: 113px;
+  border-radius: 10px;
+  text-align: center;
+  color: black;
+  margin-right: 10px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+
+  justify-content: center;
+}
+
+.invoice .right-arrow {
+  margin: 20px;
+}
+
+/* NEW INVOICE FORM*/
+
+.overlay {
+  position: fixed;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+}
+
+.new-invoice-wrapper::-webkit-scrollbar {
+  display: none;
+}
+.new-invoice-wrapper {
+  position: fixed;
+  z-index: 3;
+  margin-left: 80px;
+  padding: 50px;
+  width: 600px;
+  height: 89%;
+  background-color: var(--light-background);
+  border-radius: 0px 30px 30px 0px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.new-invoice {
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+.new-invoice h2 {
+  color: var(--light-blue);
+  font-size: 15px;
+}
+.new-invoice .bill-from {
+  margin-top: 50px;
+}
+.new-invoice .bill-to {
+  margin-top: 20px;
+}
+
+.new-invoice p {
+  color: var(--grey);
+}
+
+.new-invoice .long-input-field {
+  line-height: 1px;
+  margin-top: 40px;
+}
+
+.new-invoice .long-input-field input {
+  width: 100%;
+  padding: 10px;
+  height: 20px;
+  border: 2px solid var(--light-grey);
+  border-radius: 6px;
+  font-family: inherit;
+}
+
+.new-invoice .one-third-input {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.new-invoice .small-input-field {
+  line-height: 1px;
+  margin-top: 10px;
+  padding-right: 10px;
+}
+
+.new-invoice .small-input-field input {
+  width: 150px;
+  padding: 10px;
+  height: 20px;
+  border: 2px solid var(--light-grey);
+  border-radius: 6px;
+}
+
+.new-invoice .one-half-input {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.new-invoice .medium-input-field input {
+  width: 230px;
+  padding: 10px;
+  margin-right: 20px;
+  height: 20px;
+  border: 2px solid var(--light-grey);
+  border-radius: 6px;
+}
+
+/* ITEMS IN NEW INVOICE */
+
+.new-invoice .items {
+  color: var(--grey);
+}
+
+.items .item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.items .add-item-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.add-item-wrapper .add-item {
+  background-color: var(--light-grey);
+  color: var(--dark-grey);
+  margin-top: 20px;
+  border: none;
+  border-radius: 30px;
+  padding: 20px;
+  width: 100%;
+  font-family: inherit;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.item input {
+  padding: 10px;
+  height: 20px;
+  border: 2px solid var(--light-grey);
+  border-radius: 6px;
+}
+.item .qty {
+  width: 20px;
+}
+.item .price {
+  width: 100px;
+}
+
+.item .delete {
+  width: 12px;
+  height: 15px;
+  margin-top: 55px;
+  left: 10px;
+  cursor: pointer;
+}
+
+/*
+CLOSE BUTTONS ON NEW INPUT
+*/
+
+.close-buttons {
+  display: flex;
+  flex-direction: row;
+  margin-top: 40px;
+  justify-content: space-between;
+}
+.close-buttons .discard {
+  width: 100px;
+  background-color: var(--light-grey);
+  border: none;
+  border-radius: 30px;
+  font-weight: bold;
+  color: var(--dark-grey);
+  cursor: pointer;
+  padding: 20px;
+}
+
+.close-buttons .save-as-draft {
+  width: 150px;
+  background-color: var(--darker-grey);
+  color: var(--grey);
+  border: none;
+  border-radius: 30px;
+  font-weight: bold;
+  padding: 20px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.close-buttons .save-and-send {
+  width: 150px;
+  background-color: var(--dark-blue);
+  color: var(--light-background);
+  border: none;
+  border-radius: 30px;
+  font-weight: bold;
+  padding: 20px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+input:focus {
+  outline: none;
+}

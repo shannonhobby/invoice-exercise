@@ -1,0 +1,29 @@
+<div class="invoice">
+  <div class="id">
+    <p class="id-tag">#</p>
+    <p class="id-string">{{ invoiceProps.id }}</p>
+  </div>
+  <p class="payment-info">Due {{ invoiceProps.paymentDue | date }}</p>
+  <p class="payment-info">{{ invoiceProps.clientName }}</p>
+
+  <p class="total">{{ invoiceProps.total | currency: "GBP" }}</p>
+
+  <div
+    [ngClass]="{
+      paid: invoiceProps.status === 'paid',
+      pending: invoiceProps.status === 'pending',
+      draft: invoiceProps.status === 'draft'
+    }"
+  >
+    <img
+      [ngClass]="{
+        'dot-paid': invoiceProps.status === 'paid',
+        'dot-pending': invoiceProps.status === 'pending',
+        'dot-draft': invoiceProps.status === 'draft'
+      }"
+      src="/assets/assets/dot-svgrepo-com.svg"
+    />
+    <p>{{ invoiceProps.status | titlecase }}</p>
+  </div>
+  <img class="right-arrow" src="/assets/assets/icon-arrow-right.svg" />
+</div>

@@ -1,0 +1,39 @@
+<div class="item">
+  <div>
+    <p>Item Name</p>
+    <input
+      type="text"
+      [value]="itemProps.name"
+      (change)="updateName($event)"
+      class="item-name"
+    />
+  </div>
+  <div>
+    <p>Qty.</p>
+    <input
+      type="text"
+      [value]="itemProps.quantity"
+      (change)="updateQty($event)"
+      class="qty"
+      type="number"
+    />
+  </div>
+  <div>
+    <p>Price</p>
+    <input
+      type="number"
+      [value]="itemProps.price"
+      (change)="updatePrice($event)"
+      class="price"
+    />
+  </div>
+  <div>
+    <p>Total</p>
+    <p>{{ itemProps.total }}</p>
+  </div>
+  <img
+    class="delete"
+    (click)="deleteItem()"
+    src="/assets/assets/icon-delete.svg"
+  />
+</div>
