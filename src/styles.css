@@ -303,6 +303,7 @@ body {
 
 .invoice .right-arrow {
   margin: 20px;
+  cursor: pointer;
 }
 
 /* NEW INVOICE FORM*/
@@ -354,6 +355,18 @@ body {
 .new-invoice .long-input-field {
   line-height: 1px;
   margin-top: 40px;
+}
+
+.new-invoice .long-input-field .error {
+  border: 2px solid var(--dark-salmon);
+}
+
+.new-invoice .one-half-input .medium-input-field .error {
+  border: 2px solid var(--dark-salmon);
+}
+
+.new-invoice .one-third-input .small-input-field .error {
+  border: 2px solid var(--dark-salmon);
 }
 
 .new-invoice .long-input-field input {
@@ -420,6 +433,8 @@ body {
   background-color: var(--light-grey);
   color: var(--dark-grey);
   margin-top: 20px;
+  display: flex;
+  justify-content: center;
   border: none;
   border-radius: 30px;
   padding: 20px;
@@ -494,6 +509,167 @@ CLOSE BUTTONS ON NEW INPUT
   padding: 20px;
   margin-left: 10px;
   cursor: pointer;
+}
+
+/*INDIVIDUAL INVOICE PAGE */
+
+.individual-invoice-page {
+  display: flex;
+  align-items: center;
+}
+.individual-header-wrapper {
+  margin-left: 32%;
+  margin-top: 60px;
+}
+
+.individual-header-wrapper button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 150px;
+  background: none;
+  border: none;
+  color: var(--blue-grey);
+  font-weight: bold;
+  font-size: 20px;
+  padding-left: 20px;
+  cursor: pointer;
+}
+
+.individual-header-wrapper .header {
+  background-color: white;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  width: 730px;
+}
+
+.individual-header-wrapper .header .paid .dot-paid {
+  width: 8px;
+  height: auto;
+  filter: invert(100%) sepia(47%) saturate(3336%) hue-rotate(79deg)
+    brightness(95%) contrast(76%);
+  margin: 10px;
+  margin-left: 0px;
+}
+
+.individual-header-wrapper .header .paid {
+  background-color: rgb(51, 214, 159, 5%);
+  width: 113px;
+  border-radius: 10px;
+  text-align: center;
+  color: rgb(51, 214, 159, 50%);
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+  justify-content: center;
+}
+
+.individual-header-wrapper .header .pending .dot-pending {
+  width: 8px;
+  height: auto;
+  filter: invert(78%) sepia(50%) saturate(6398%) hue-rotate(359deg)
+    brightness(101%) contrast(106%);
+  margin: 10px;
+  margin-left: 0px;
+}
+
+.individual-header-wrapper .header .pending {
+  background-color: rgb(255, 143, 0, 5%);
+  width: 113px;
+  border-radius: 10px;
+  text-align: center;
+  color: rgb(255, 143, 0);
+  font-weight: bold;
+  display: flex;
+  margin-right: 10px;
+  align-items: center;
+
+  justify-content: center;
+}
+
+.individual-header-wrapper .header .draft .dot-draft {
+  width: 8px;
+  height: auto;
+
+  margin: 10px;
+  margin-left: 0px;
+}
+
+.individual-header-wrapper .header .draft {
+  background-color: rgb(0, 0, 0, 5%);
+  width: 113px;
+  border-radius: 10px;
+  text-align: center;
+  color: black;
+  margin-right: 10px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+
+  justify-content: center;
+}
+
+.individual-header-wrapper .header .edit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-color: var(--light-grey);
+  font-weight: bold;
+  width: 73px;
+  border-radius: 30px;
+  color: var(--dark-grey);
+}
+
+.individual-header-wrapper .header .edit:hover {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-color: var(--light-grey);
+  font-weight: bold;
+  width: 73px;
+  border-radius: 30px;
+  color: var(--dark-grey);
+}
+.individual-header-wrapper .header .delete {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-color: var(--dark-salmon);
+  font-weight: bold;
+  width: 89px;
+  border-radius: 30px;
+  color: var(--light-background);
+}
+
+.individual-header-wrapper .header .mark-as-paid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--dark-blue);
+  cursor: pointer;
+  font-weight: bold;
+  width: 131px;
+  border-radius: 30px;
+  color: var(--light-background);
+}
+
+.individual-header-wrapper .header .header-buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 300px;
+}
+
+.individual-header-wrapper .header .status {
+  color: var(--grey);
+  margin-right: 20px;
+  margin-left: 20px;
 }
 input:focus {
   outline: none;

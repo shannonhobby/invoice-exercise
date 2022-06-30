@@ -1,0 +1,30 @@
+<button (click)="homepage()">
+  <img src="/assets/assets/icon-arrow-left.svg" /> Go Back
+</button>
+<div class="header">
+  <div>
+    <p class="status">Status</p>
+    <div
+      [ngClass]="{
+        paid: invoiceProps.status === 'paid',
+        pending: invoiceProps.status === 'pending',
+        draft: invoiceProps.status === 'draft'
+      }"
+    >
+      <img
+        [ngClass]="{
+          'dot-paid': invoiceProps.status === 'paid',
+          'dot-pending': invoiceProps.status === 'pending',
+          'dot-draft': invoiceProps.status === 'draft'
+        }"
+        src="/assets/assets/dot-svgrepo-com.svg"
+      />
+      <p>{{ invoiceProps.status | titlecase }}</p>
+    </div>
+  </div>
+  <div class="header-buttons">
+    <div class="edit">Edit</div>
+    <div class="delete">Delete</div>
+    <div class="mark-as-paid">Mark as Paid</div>
+  </div>
+</div>

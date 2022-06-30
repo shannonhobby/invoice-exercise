@@ -25,5 +25,9 @@
     />
     <p>{{ invoiceProps.status | titlecase }}</p>
   </div>
-  <img class="right-arrow" src="/assets/assets/icon-arrow-right.svg" />
+  <img
+    (click)="navigateToInvoice(invoiceProps.id)"
+    class="right-arrow"
+    src="/assets/assets/icon-arrow-right.svg"
+  />
 </div>

@@ -235,7 +235,7 @@ export class MainService {
       total: 3102.04,
     },
   ]);
-  newInvoice$ = new BehaviorSubject<boolean>(true);
+  newInvoice$ = new BehaviorSubject<boolean>(false);
 
   toggleNewInvoice(): void {
     this.newInvoice$.next(true);

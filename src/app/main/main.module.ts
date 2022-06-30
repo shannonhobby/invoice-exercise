@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
 import { InvoiceComponent } from './components/invoice/invoice.component';
@@ -21,7 +22,12 @@ const routes: Routes = [{ path: '', component: MainComponent }];
     InvoiceComponent,
     ItemComponent,
   ],
-  imports: [RouterModule.forChild(routes), CommonModule],
+  imports: [
+    RouterModule.forChild(routes),
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+  ],
   providers: [MainService],
   bootstrap: [],
 })

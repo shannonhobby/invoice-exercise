@@ -1,93 +1,185 @@
 <div class="new-invoice">
   <h1>New Invoice</h1>
+  <form
+    (ngSubmit)="addInvoice(formData.value)"
+    #form="ngForm"
+    ngNativeValidate
+    [formGroup]="formData"
+  >
+    <div class="bill-from">
+      <h2>Bill From</h2>
+      <div class="long-input-field">
+        <p>Street Address</p>
+        <input
+          [ngClass]="{
+            error: !noError && !formData.value.senderStreet
+          }"
+          required
+          formControlName="senderStreet"
+        />
+      </div>
+      <div class="one-third-input">
+        <div class="small-input-field">
+          <p>City</p>
+          <input
+            required
+            [ngClass]="{
+              error: !noError && !formData.value.senderCity
+            }"
+            formControlName="senderCity"
+          />
+        </div>
+        <div class="small-input-field">
+          <p>Post Code</p>
+          <input
+            required
+            [ngClass]="{
+              error: !noError && !formData.value.senderPostCode
+            }"
+            formControlName="senderPostCode"
+          />
+        </div>
+        <div class="small-input-field">
+          <p>Country</p>
+          <input
+            required
+            [ngClass]="{
+              error: !noError && !formData.value.senderCountry
+            }"
+            formControlName="senderCountry"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="bill-to">
+      <h2>Bill To</h2>
+      <div class="long-input-field">
+        <p>Client's Name</p>
+        <input
+          required
+          [ngClass]="{
+            error: !noError && !formData.value.clientName
+          }"
+          formControlName="clientName"
+        />
+      </div>
+      <div class="long-input-field">
+        <p>Client's Email</p>
+        <input
+          required
+          [ngClass]="{
+            error: !noError && !formData.value.clientEmail
+          }"
+          formControlName="clientEmail"
+          placeholder="e.g. email@example.com"
+        />
+      </div>
+      <div class="long-input-field">
+        <p>Street Address</p>
+        <input
+          required
+          [ngClass]="{
+            error: !noError && !formData.value.clientStreet
+          }"
+          formControlName="clientStreet"
+        />
+      </div>
+      <div class="one-third-input">
+        <div class="small-input-field">
+          <p>City</p>
+          <input
+            [ngClass]="{
+              error: !noError && !formData.value.clientCity
+            }"
+            required
+            formControlName="clientCity"
+          />
+        </div>
+        <div class="small-input-field">
+          <p>Post Code</p>
+          <input
+            [ngClass]="{
+              error: !noError && !formData.value.clientPostCode
+            }"
+            required
+            formControlName="clientPostCode"
+          />
+        </div>
+        <div class="small-input-field">
+          <p>Country</p>
+          <input
+            required
+            [ngClass]="{
+              error: !noError && !formData.value.clientCountry
+            }"
+            formControlName="clientCountry"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="one-half-input">
+      <div class="medium-input-field">
+        <p>Invoice Date</p>
+        <input
+          required
+          [ngClass]="{
+            error: !noError && !formData.value.createdAt
+          }"
+          type="date"
+          formControlName="createdAt"
+          class="datepicker-input"
+        />
+      </div>
+      <div class="medium-input-field">
+        <p>Payment Terms</p>
+        <input
+          [ngClass]="{
+            error: !noError && !formData.value.paymentTerms
+          }"
+          required
+          list="payment-terms"
+          formControlName="paymentDue"
+          name="payment"
+          id="payment"
+        />
+        <datalist id="payment-terms">
+          <option value="Net 1 Day"></option>
+          <option value="Net 7 Days"></option>
+          <option value="Net 14 Days"></option>
+          <option value="Net 30 Days"></option>
+        </datalist>
+      </div>
+    </div>
+    <div class="long-input-field">
+      <p>Project Description</p>
+      <input
+        [ngClass]="{
+          error: !noError && !formData.value.description
+        }"
+        formControlName="description"
+        required
+      />
+    </div>
 
-  <div class="bill-from">
-    <h2>Bill From</h2>
-    <div class="long-input-field">
-      <p>Street Address</p>
-      <input [value]="senderStreet" />
-    </div>
-    <div class="one-third-input">
-      <div class="small-input-field">
-        <p>City</p>
-        <input />
-      </div>
-      <div class="small-input-field">
-        <p>Post Code</p>
-        <input />
-      </div>
-      <div class="small-input-field">
-        <p>Country</p>
-        <input />
+    <div class="items">
+      <h1>Item List</h1>
+      <app-main-item
+        *ngFor="let item of items$ | async"
+        [item]="item"
+        class="item-wrapper"
+      ></app-main-item>
+      <div class="add-item-wrapper">
+        <div (click)="addItem()" class="add-item">+ Add New Item</div>
       </div>
     </div>
-  </div>
-  <div class="bill-to">
-    <h2>Bill To</h2>
-    <div class="long-input-field">
-      <p>Client's Name</p>
-      <input />
-    </div>
-    <div class="long-input-field">
-      <p>Client's Email</p>
-      <input />
-    </div>
-    <div class="long-input-field">
-      <p>Street Address</p>
-      <input placeholder="e.g. email@example.com" />
-    </div>
-    <div class="one-third-input">
-      <div class="small-input-field">
-        <p>City</p>
-        <input />
-      </div>
-      <div class="small-input-field">
-        <p>Post Code</p>
-        <input />
-      </div>
-      <div class="small-input-field">
-        <p>Country</p>
-        <input />
+    <div class="close-buttons">
+      <button class="discard" (click)="toggleNewInvoice()">Discard</button>
+      <div class="save">
+        <button class="save-as-draft">Save as Draft</button>
+        <button (click)="showErrors()" type="submit" class="save-and-send">
+          Save & Send
+        </button>
       </div>
     </div>
-  </div>
-  <div class="one-half-input">
-    <div class="medium-input-field">
-      <p>Invoice Date</p>
-      <input type="date" class="datepicker-input" />
-    </div>
-    <div class="medium-input-field">
-      <p>Payment Terms</p>
-      <input list="payment-terms" name="payment" id="payment" />
-      <datalist id="payment-terms">
-        <option value="Net 1 Day"></option>
-        <option value="Net 7 Days"></option>
-        <option value="Net 14 Days"></option>
-        <option value="Net 30 Days"></option>
-      </datalist>
-    </div>
-  </div>
-  <div class="long-input-field">
-    <p>Project Description</p>
-    <input />
-  </div>
-
-  <div class="items">
-    <h1>Item List</h1>
-    <app-main-item
-      *ngFor="let item of items$ | async"
-      [item]="item"
-      class="item-wrapper"
-    ></app-main-item>
-    <div class="add-item-wrapper">
-      <button (click)="addItem()" class="add-item">+ Add New Item</button>
-    </div>
-  </div>
-  <div class="close-buttons">
-    <button class="discard">Discard</button>
-    <div class="save">
-      <button class="save-as-draft">Save as Draft</button>
-      <button (click)="addInvoice()" class="save-and-send">Save & Send</button>
-    </div>
-  </div>
+  </form>
 </div>
