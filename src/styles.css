@@ -126,7 +126,7 @@ body {
 }
 .front-logo {
   background-color: var(--light-blue);
-  width: 100px;
+  width: 104px;
   height: 50px;
   position: absolute;
   margin-top: -50px;
@@ -134,7 +134,7 @@ body {
 }
 .back-logo {
   background-color: var(--dark-blue);
-  width: 100px;
+  width: 104px;
   height: 100px;
   border-radius: 0px 30px 30px 0px;
   position: static;
@@ -203,7 +203,9 @@ body {
   margin-left: 30px;
   flex-direction: row;
 }
-.id .id-tag {
+
+
+.id-tag {
   color: var(--grey);
   font-size: 20px;
   font-family: inherit;
@@ -515,11 +517,14 @@ CLOSE BUTTONS ON NEW INPUT
 
 .individual-invoice-page {
   display: flex;
+  flex-direction: column;
   align-items: center;
+  margin-left: 200px;
+
 }
 .individual-header-wrapper {
-  margin-left: 32%;
   margin-top: 60px;
+  filter: drop-shadow(0px 4px 10px rgb(72, 84, 159, 10%));
 }
 
 .individual-header-wrapper button {
@@ -670,7 +675,160 @@ CLOSE BUTTONS ON NEW INPUT
   color: var(--grey);
   margin-right: 20px;
   margin-left: 20px;
+
 }
+
+/*  INDIVIDUAL INVOICE BODY */
+
+.individual-body-wrapper{
+  display: flex;
+  flex-direction: column;
+  font-family: inherit;
+  padding: 20px;
+  margin-top: 30px;
+  width: 730px;
+  background-color: white;
+  border-radius: 6px;
+  filter: drop-shadow(0px 4px 10px rgb(72, 84, 159, 10%));
+
+}
+.body-page{
+  padding: 30px;
+}
+
+.body-page .body-header-left{
+  line-height: 1px;
+}
+.body-page .body-header-right{
+  line-height: 10px;
+  text-align: right;
+}
+
+
+.body-page .body-header{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.body-page .body-header-left .description{
+  margin-top: 0px;
+}
+
+.body-page  p{
+  color: var(--grey);
+  font-size: 15px;
+}
+
+.body-page h2{
+  color: var(--grey);
+  font-size: 16px;
+  font-weight: normal;
+}
+
+.body-page .important-info{
+  font-size: 20px;
+  color: var(--dark-grey);
+  font-weight: bold;
+}
+
+
+.body-page .id{
+  display: flex;
+  flex-direction: row;
+}
+
+.body-page .id .id-tag{
+  font-size: 30px;
+  margin-top: 22px;
+
+}
+
+.body-page .body-info{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+}
+
+.body-info .address{
+  line-height: 10px;
+}
+
+.body-info .dates{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* INDIVIDUAL INVOICE BODY ITEMS */
+
+.body-page .body-items{
+  margin-top: 50px;
+  background-color: var(--light-background);
+  color: var(--grey);
+ 
+}
+
+.body-items .items-container-header{
+  padding: 30px 30px 0px 30px;
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr 1fr;
+  grid-auto-flow: row; 
+  margin-top: 30px;
+
+}
+
+.item2{
+  text-align: center;
+}
+.item3, .item4{
+  text-align: right;
+}
+
+.body-items .items-container{
+  padding: 0px 30px 0px 30px;
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr 1fr;
+  grid-auto-flow: row; 
+  margin-top: 40px;
+}
+
+.items-container .item-name{
+  color: var(--darker-grey);
+  font-weight: bold;
+  font-size: 16px;
+}
+
+
+.body-items .items-total{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: var(--darker-grey);
+  height: 80px;
+  margin-top: 40px;
+  align-items: center;
+  border-radius: 0px 0px 6px 6px;
+  padding: 0px 20px 0px 20px;
+}
+
+.items-total p {
+  color: var(--light-background);
+  margin-left: 10px;
+}
+
+.items-total h1{
+  color: var(--light-background);
+  font-weight: bold;
+  font-size: 30px;
+  margin-right: 10px;
+  }
+
+
+
 input:focus {
   outline: none;
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

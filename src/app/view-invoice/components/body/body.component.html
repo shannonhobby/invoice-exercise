@@ -1,0 +1,63 @@
+<div class="body-page">
+  <div class="body-header">
+    <div class="body-header-left">
+      <div class="id">
+        <p class="id-tag">#</p>
+        <h1>{{ invoiceProps.id }}</h1>
+      </div>
+      <p class="description">{{ invoiceProps.description }}</p>
+    </div>
+    <div class="body-header-right">
+      <p>{{ invoiceProps.senderAddress.street }}</p>
+      <p>{{ invoiceProps.senderAddress.city }}</p>
+      <p>{{ invoiceProps.senderAddress.postCode }}</p>
+      <p>{{ invoiceProps.senderAddress.country }}</p>
+    </div>
+  </div>
+  <div class="body-info">
+    <div class="dates">
+      <div class="invoice-date">
+        <h2>Invoice Date</h2>
+        <p class="important-info">{{ invoiceProps.createdAt | date }}</p>
+      </div>
+      <div class="payment-due">
+        <h2>Payment Due</h2>
+        <p class="important-info">{{ invoiceProps.paymentDue | date }}</p>
+      </div>
+    </div>
+    <div>
+      <h2>Bill to</h2>
+      <p class="important-info">Alex Grim</p>
+      <div class="address">
+        <p>{{ invoiceProps.clientAddress.street }}</p>
+        <p>{{ invoiceProps.clientAddress.city }}</p>
+        <p>{{ invoiceProps.clientAddress.postCode }}</p>
+        <p>{{ invoiceProps.clientAddress.country }}</p>
+      </div>
+    </div>
+    <div>
+      <h2>Sent to</h2>
+      <p class="important-info">{{ invoiceProps.clientEmail }}</p>
+    </div>
+  </div>
+  <div class="body-items">
+    <div class="items-wrapper">
+      <section class="items-container-header">
+        <article class="item item1">Item name</article>
+        <article class="item item2">QTY.</article>
+        <article class="item item3">Price</article>
+        <article class="item item3">Total</article>
+      </section>
+      <section class="items-container" *ngFor="let item of invoiceProps.items">
+        <article class="item-name">{{ item.name }}</article>
+        <article class="item2">{{ item.quantity }}</article>
+        <article class="item3">{{ item.price | currency: "GBP" }}</article>
+        <article class="item4">{{ item.total | currency: "GBP" }}</article>
+      </section>
+    </div>
+    <div class="items-total">
+      <p>Amount Due</p>
+      <h1>{{ invoiceProps.total | currency: "GBP" }}</h1>
+    </div>
+  </div>
+</div>
